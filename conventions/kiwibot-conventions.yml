@@ -1,0 +1,72 @@
+generated: '2026-08-23'
+method: probed
+source: >-
+  Anonymous probes of https://api.kiwibot.com (2026-08-23) plus a full walk of robot.com. No public
+  API reference exists, so every field below is either directly observed on the wire or recorded as
+  unknown. Nothing here is inferred from what a delivery API "usually" does.
+api: Kiwibot Delivery Platform API
+base_url: https://api.kiwibot.com
+docs: null
+auth_style:
+  model: api-key
+  detail: >-
+    Google Cloud Endpoints consumer identity required on every request; see
+    authentication/kiwibot-authentication.yml. Placement (header vs query) is undocumented.
+idempotency:
+  supported: unknown
+  header: null
+  scope: null
+  retention: null
+  note: >-
+    UNKNOWN, not absent. No idempotency key header is documented and none can be observed without a
+    credential. NO `Idempotency` pointer is emitted in apis.yml — asserting one on a provider with
+    no published contract would be exactly the false credit this pipeline exists to avoid.
+pagination:
+  style: unknown
+  params: []
+  response_fields: []
+  note: No public reference; not anonymously observable behind the 401.
+field_expansion:
+  supported: unknown
+sparse_fieldsets:
+  supported: unknown
+metadata:
+  supported: unknown
+request_id_tracing:
+  header: null
+  note: >-
+    No X-Request-Id, X-Correlation-Id or traceparent header was returned on any anonymous 401/404
+    response from the gateway.
+versioning:
+  style: unversioned-path
+  detail: See lifecycle/kiwibot-lifecycle.yml — /v1 and /v2 are undefined on the gateway.
+error_envelope:
+  shape: '{"code": <int>, "message": <string>}'
+  content_type: application/json
+  rfc9457: false
+  detail: See errors/kiwibot-problem-types.yml.
+rate_limit_signaling:
+  headers: []
+  detail: See rate-limits/kiwibot-rate-limits.yml — none observed anonymously.
+dry_run_mode:
+  supported: unknown
+  note: No sandbox, test mode, or simulation surface is published.
+reversibility:
+  grade: none
+  write_surface: unknown
+  reversal_operations: []
+  windows: []
+  note: >-
+    NOT `na` and NOT `documented`. A delivery-dispatch API of this kind almost certainly has a write
+    surface with consequential actions (dispatching a robot, cancelling a task), and /deliveries is
+    a confirmed defined resource on the gateway — so this is not a read-only API that can honestly
+    take `na`. But the provider publishes no reference, so no reversal operation, no operationId,
+    and above all NO WINDOW can be cited. Deliberately left ungraded-as-none rather than guessing:
+    an invented cancellation window is the one error in this pipeline that could cost a caller real
+    money. An agent holding a key today has no published way to learn whether a dispatch it just
+    issued can be taken back, or by when.
+cross_references:
+- errors/kiwibot-problem-types.yml
+- lifecycle/kiwibot-lifecycle.yml
+- authentication/kiwibot-authentication.yml
+- rate-limits/kiwibot-rate-limits.yml

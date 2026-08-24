@@ -1,0 +1,49 @@
+generated: '2026-08-23'
+method: probed
+source: >-
+  Anonymous HTTP probes of https://api.kiwibot.com (2026-08-23). No OpenAPI responses to derive
+  from and no published error reference was found.
+api: Kiwibot Delivery Platform API
+format: json
+rfc9457: false
+content_type_observed: application/json
+envelope:
+  shape: flat object
+  fields:
+  - name: code
+    type: integer
+    description: Numeric HTTP status repeated in the body.
+  - name: message
+    type: string
+    description: Human-readable explanation. No machine-readable error identifier is returned.
+  note: >-
+    NOT RFC 9457. The response carries `application/json`, not `application/problem+json`, and
+    contains no `type`, `title`, `detail` or `instance` members — so an agent has nothing stable to
+    branch on beyond the HTTP status and English prose. This is the stock Google Cloud Endpoints /
+    ESPv2 error envelope, not a provider-authored catalog.
+problem_types:
+- status: 401
+  code: 401
+  title: UNAUTHENTICATED
+  detail: >-
+    Method doesn't allow unregistered callers (callers without established identity). Please use
+    API Key or other form of API consumer identity to call this API.
+  remediation: Present a valid API consumer credential obtained from the provider.
+  observed_at: https://api.kiwibot.com/deliveries
+  method: probed
+- status: 404
+  code: 404
+  title: Not defined by this API
+  detail: The current request is not defined by this API.
+  remediation: >-
+    The requested path is not routed by the gateway. Returned for every path outside the deployed
+    Endpoints service definition — this response is what distinguishes a defined resource from an
+    undefined one on this host.
+  observed_at: https://api.kiwibot.com/openapi.json
+  method: probed
+problem_type_count: 2
+gaps:
+- No published error reference or status-code table.
+- No application/problem+json (RFC 9457) representation.
+- No stable machine-readable error identifiers, only HTTP status plus prose.
+- 4xx/5xx classes beyond 401/404 could not be observed anonymously without authenticating.

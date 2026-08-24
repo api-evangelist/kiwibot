@@ -1,0 +1,47 @@
+generated: '2026-08-23'
+method: probed
+source: >-
+  Anonymous HTTP probes of https://api.kiwibot.com (2026-08-23). No OpenAPI securitySchemes exist
+  to derive from and no public auth documentation was found on any host.
+api: Kiwibot Delivery Platform API
+base_url: https://api.kiwibot.com
+documented: false
+docs: null
+note: >-
+  Derived entirely from the gateway's own anonymous responses, because the provider publishes no
+  authentication page. api.kiwibot.com is a Google Cloud Endpoints / ESPv2 deployment: its
+  unauthenticated response is the verbatim Endpoints challenge string, which states the accepted
+  credential form. Whether the key travels as an `x-api-key` header or an `?key=` query parameter
+  is a per-deployment Endpoints choice that cannot be established anonymously and is NOT asserted
+  here.
+schemes:
+- id: api_key
+  type: apiKey
+  name: unknown
+  in: unknown
+  description: >-
+    API consumer identity required on every request. Evidenced by the gateway's own 401 body:
+    "UNAUTHENTICATED: Method doesn't allow unregistered callers (callers without established
+    identity). Please use API Key or other form of API consumer identity to call this API."
+  evidence:
+    url: https://api.kiwibot.com/deliveries
+    http_status: 401
+    body: >-
+      {"code":401,"message":"UNAUTHENTICATED: Method doesn't allow unregistered callers (callers
+      without established identity). Please use API Key or other form of API consumer identity to
+      call this API."}
+oauth2: false
+openid_connect: false
+mutual_tls: false
+scopes_published: false
+key_issuance:
+  self_service: false
+  channel: sales/demo form
+  url: https://robot.com/contact
+  note: >-
+    No developer signup, no console, no key-management page was found on any probed host. The only
+    documented route to credentials is the demo request form on robot.com/contact.
+gaps:
+- No authentication documentation published at any public URL.
+- Credential placement (header vs query parameter) is undocumented and not anonymously determinable.
+- No OAuth 2.0, OIDC discovery, or scope reference published.

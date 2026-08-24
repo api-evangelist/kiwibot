@@ -1,0 +1,22 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://robot.com/ (site + sitemap.xml walked 2026-08-23), https://robot.com/terms-of-use,
+  https://robot.com/contact, plus anonymous response-header inspection of https://api.kiwibot.com
+api: Kiwibot Delivery Platform API
+documented: false
+docs: null
+limit_count: 0
+limits: []
+response_headers:
+  observed: []
+  note: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header was present on any anonymous response from
+    api.kiwibot.com. Only 401 and 404 responses are anonymously reachable, so quota headers may
+    still be emitted on authenticated 2xx responses — this records what a caller can actually see
+    before holding a key, which is nothing.
+exhaustion_status: unknown
+note: >-
+  An honest zero. The provider publishes no developer documentation of any kind, so no rate limit,
+  quota, burst allowance or throttling signal is discoverable. Google Cloud Endpoints supports
+  per-consumer quotas natively, so limits very likely exist on the gateway; none are published.

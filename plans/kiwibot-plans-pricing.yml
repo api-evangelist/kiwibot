@@ -1,0 +1,21 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://robot.com/sitemap.xml (full page list walked 2026-08-23), https://robot.com/pricing
+  (HTTP 404), https://robot.com/contact (HTTP 200 — demo request form)
+plan_count: 0
+plans: []
+model: contact-sales
+free_tier: false
+self_service_signup: false
+note: >-
+  The provider publishes no pricing page and no plans. robot.com/pricing returns HTTP 404 and the
+  sitemap contains no pricing, plans or signup URL. Commercial engagement runs entirely through the
+  demo request form at robot.com/contact, which asks for company, business email, phone and whether
+  the primary goal is "Operations with robots" or "Advertise with robots". This is an enterprise
+  contact-sales motion — recorded as plan_count 0 rather than omitted, so the absence is countable.
+evidence:
+- url: https://robot.com/pricing
+  status: 404
+- url: https://robot.com/contact
+  status: 200

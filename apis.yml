@@ -1,23 +1,113 @@
 aid: kiwibot
 name: Kiwibot
-description: 'Kiwibot is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Kiwibot — legally Kiwi Campus, Inc., and rebranded to Robot.com in October 2025 — builds and
+  operates fleets of autonomous sidewalk delivery robots, warehouse logistics robots, quadruped and
+  humanoid platforms, and robot-mounted advertising units. Founded in Berkeley, California in 2017
+  by Felipe Chavez and Jason Oviedo out of a UC Berkeley campus food-delivery pilot, the company
+  reports more than 1.7 million completed real-world autonomous tasks for campus dining, retail,
+  grocery and enterprise customers across the United States, Canada, Colombia, the United Arab
+  Emirates and Saudi Arabia, and acquired mobile-advertising firm Nickelytics in 2023. Its B2B
+  delivery platform is exposed as an API-key-gated REST service on a Google Cloud Endpoints gateway
+  at api.kiwibot.com — historically integrated by ordering partners such as Shopify and Ordermark —
+  but the company publishes no developer portal, no public API reference, and no machine-readable
+  contract; access runs through the sales/demo form. Its autonomy team publishes substantial
+  first-party open source ROS 2 tooling from the github.com/kiwicampus organization.
+image: https://avatars.githubusercontent.com/u/31900628?v=4
 url: https://raw.githubusercontent.com/api-evangelist/kiwibot/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
-apis: []
+- Robotics
+- Autonomous Vehicles
+- Delivery
+- Last Mile Delivery
+- Logistics
+- Warehouse Automation
+- Advertising
+- ROS
+- Open Source
+apis:
+- name: Kiwibot Delivery Platform API
+  description: >-
+    The business-to-business delivery API behind Kiwibot's autonomous last-mile fleet, served from a
+    Google Cloud Endpoints gateway at api.kiwibot.com. Probed anonymously on 2026-08-23 the gateway
+    answers HTTP 401 UNAUTHENTICATED ("Method doesn't allow unregistered callers ... Please use API
+    Key or other form of API consumer identity") on defined resources including /deliveries and
+    /zones, and HTTP 404 ("The current request is not defined by this API") on undefined paths — so
+    the surface is real and enumerable but entirely credential-gated. No OpenAPI, Swagger, GraphQL
+    SDL, AsyncAPI or Postman collection is published at any host we probed, and there is no
+    developer portal or public reference; integrators obtain access via the demo/sales form.
+  humanURL: https://robot.com/r-kiwi
+  baseURL: https://api.kiwibot.com
+  tags:
+  - Delivery
+  - Robotics
+  - Last Mile Delivery
+  - Logistics
+  properties:
+  - type: Authentication
+    url: authentication/kiwibot-authentication.yml
+  - type: ErrorCatalog
+    url: errors/kiwibot-problem-types.yml
+  - type: RateLimits
+    url: rate-limits/kiwibot-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Packages
+  url: packages/kiwibot-packages.yml
+- type: Conventions
+  url: conventions/kiwibot-conventions.yml
+- type: Lifecycle
+  url: lifecycle/kiwibot-lifecycle.yml
+- type: Conformance
+  url: conformance/kiwibot-conformance.yml
+- type: Plans
+  url: plans/kiwibot-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/kiwibot-llms.txt
+- type: DomainSecurity
+  url: security/kiwibot-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/kiwibot-stock
+  url: https://robot.com/
+- type: Blog
+  url: https://robot.com/newsroom
+- type: Support
+  url: https://robot.com/contact
+- type: GitHubOrganization
+  url: https://github.com/kiwicampus
+- type: TermsOfService
+  url: https://robot.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://robot.com/privacy-policy
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 12
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    api.kiwibot.com is a live Google Cloud Endpoints gateway that answers 401 UNAUTHENTICATED on
+    defined resources /deliveries and /zones, but Robot.com publishes no developer portal,
+    reference or spec on any host (developers./docs./api.robot.com do not resolve) — the only
+    published route to a key is the demo-request form at robot.com/contact.
+  evidence:
+  - url: https://api.kiwibot.com/deliveries
+    status: 401
+  - url: https://api.kiwibot.com/openapi.json
+    status: 404
+  - url: https://robot.com/contact
+    status: 200
+  - url: https://robot.com/pricing
+    status: 404
+  checked: '2026-08-23'

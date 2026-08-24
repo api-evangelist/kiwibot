@@ -1,0 +1,56 @@
+generated: '2026-08-23'
+method: probed
+source: live GET of /.well-known/* on every host named in apis.yml (website + baseURL)
+note: >-
+  Every probed path returned 404 on both hosts. robot.com is a Next.js site that returns a real
+  HTML 404 (not a 200 SPA catch-all); api.kiwibot.com is a Google Cloud Endpoints gateway that
+  returns its own JSON 404 body ("The current request is not defined by this API"). Because no
+  path returned a document, NO WellKnown and NO SecurityTxt pointer is emitted in apis.yml — this
+  file records a verified absence, not a served surface.
+hosts:
+- host: robot.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.kiwibot.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

@@ -1,0 +1,94 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://github.com/kiwicampus (org self-describes as "Department of Autonomy at Robot.com",
+  blog www.robot.com) + registry metadata from pypi.org/pypi/<pkg>/json, checked 2026-08-23
+note: >-
+  NO first-party client SDK exists for the Kiwibot Delivery Platform API — npm, PyPI, RubyGems,
+  crates.io, Packagist, NuGet, Maven Central and pkg.go.dev were all searched and none carries a
+  Kiwibot/Robot.com API client, which is consistent with the API having no public documentation.
+  What the company DOES publish is first-party open-source ROS 2 robotics tooling from its autonomy
+  org. Those are recorded below because they are genuine, dated, provider-published artifacts, but
+  they are developer tools for ROS 2 — not clients for this provider's API — so NO `SDKs` pointer
+  is emitted in apis.yml. Most of the 162 repos in the org are forks of upstream ROS packages and
+  are excluded here; only repositories originated by the org are listed.
+packages:
+- language: python
+  name: ros2-graph
+  registry: pypi
+  url: https://pypi.org/project/ros2-graph/
+  repository: https://github.com/kiwicampus/ros2_graph
+  official: true
+  is_api_client: false
+  version: 0.0.5
+  published: '2023-10-17'
+  description: >-
+    CLI that generates mermaid descriptions of ROS 2 computation graphs for embedding in markdown.
+    The org's most-starred published package (110 GitHub stars). Last release 2023-10-17 — nearly
+    three years stale at time of check.
+- language: python
+  name: rosboard_client
+  registry: null
+  url: https://github.com/kiwicampus/rosboard_client
+  repository: https://github.com/kiwicampus/rosboard_client
+  official: true
+  is_api_client: false
+  version: null
+  published: null
+  note: >-
+    Checked, nothing to record — source-only distribution. Client for remotely streaming ROS
+    messages over websockets using rosboard as server (46 stars). No PyPI package named
+    rosboard-client or rosboard_client exists (both return HTTP 404 from pypi.org), so there is no
+    registry metadata endpoint to read a version or release date from; consumers install from git.
+- language: cpp
+  name: semantic_segmentation_layer
+  registry: null
+  url: https://github.com/kiwicampus/semantic_segmentation_layer
+  repository: https://github.com/kiwicampus/semantic_segmentation_layer
+  official: true
+  is_api_client: false
+  version: null
+  published: null
+  note: >-
+    Checked, nothing to record — ROS 2 packages are distributed through the ROS index/apt rather
+    than a language registry with a metadata endpoint. Nav2 costmap layer for semantic
+    segmentation; the org's most-starred repository (150 stars), actively maintained (last push
+    2026-08-21).
+- language: python
+  name: shm_ros
+  registry: null
+  url: https://github.com/kiwicampus/shm_ros
+  repository: https://github.com/kiwicampus/shm_ros
+  official: true
+  is_api_client: false
+  version: null
+  published: null
+  note: >-
+    Checked, nothing to record — source-only, no language registry. Tools for interacting with
+    shared memory in ROS; last push 2026-08-22.
+- language: python
+  name: rclpy_async
+  registry: null
+  url: https://github.com/kiwicampus/rclpy_async
+  repository: https://github.com/kiwicampus/rclpy_async
+  official: true
+  is_api_client: false
+  version: null
+  published: null
+  note: >-
+    Checked, nothing to record — source-only, no language registry. Async utilities for rclpy on
+    ROS 2 Humble; last push 2026-08-20.
+- language: cpp
+  name: mono_color_segmentation
+  registry: null
+  url: https://github.com/kiwicampus/mono_color_segmentation
+  repository: https://github.com/kiwicampus/mono_color_segmentation
+  official: true
+  is_api_client: false
+  version: null
+  published: null
+  note: >-
+    Checked, nothing to record — source-only ROS 2 package, no language registry. Last push
+    2024-10-09.
+sdk_count: 0
+package_count: 6

@@ -1,0 +1,60 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://robot.com/privacy-policy, https://robot.com/terms-of-use, https://robot.com/newsroom,
+  trust.robot.com / security.robot.com / robot.com/trust / robot.com/security /
+  robot.com/compliance (all probed by probe-security-programs.py 2026-08-23 — no trust center
+  found)
+standards: []
+entries:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    robot.com/privacy-policy (HTTP 200) publishes a distinct "GDPR Addendum" supplementing the
+    privacy policy "with information to comply with our obligations under the General Data
+    Protection Regulation", with data-subject contacts data@kiwicampus.com and legal@robot.com and
+    a legal notice address at 2632 Wilshire Boulevard, Suite 325, Santa Monica, California 90403.
+  scope: Company-wide data protection. Not an API-level conformance claim.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    api.kiwibot.com returns application/json with a {code, message} envelope, not
+    application/problem+json. See errors/kiwibot-problem-types.yml.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth 2.0 surface. /.well-known/oauth-authorization-server returns 404 on both hosts; the
+    gateway challenges for an API consumer key, not a bearer token.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on robot.com and api.kiwibot.com.
+- id: idempotency
+  conforms: unknown
+  evidence: Not documented and not anonymously observable. See conventions/kiwibot-conventions.yml.
+- id: pagination
+  conforms: unknown
+  evidence: Not documented and not anonymously observable.
+domain_standard:
+  applicable: false
+  candidates_checked:
+  - id: mass-robotics-aip
+    name: MassRobotics Autonomous Mobile Robot Interoperability Standard
+    found: false
+    note: >-
+      The one broadly-adopted interoperability contract in this provider's market (AMR/delivery
+      robotics). No reference to it appears on robot.com or in the kiwicampus GitHub organization.
+  - id: vda5050
+    name: VDA 5050 AGV/AMR communication interface
+    found: false
+    note: No reference found on robot.com or in the kiwicampus GitHub organization.
+  note: >-
+    REWARD-ONLY check, left unclaimed. The contract itself could not be read (401-gated, no
+    published spec), so no domain-standard signature could be inspected in it. Absence here is
+    "not evidenced", not "does not conform".
+certifications: []
+compliance_program_published: false
+note: >-
+  A GDPR addendum inside a privacy policy is a real, evidenced, published compliance document, but
+  it is not a certification program page and names no audited certification (no SOC 2, ISO 27001,
+  PCI DSS, HIPAA or FedRAMP claim appears anywhere on the site). NO `Compliance` and NO
+  `TrustCenter` pointer is emitted in apis.yml — only `Conformance`.

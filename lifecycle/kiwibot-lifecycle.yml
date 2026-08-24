@@ -1,0 +1,54 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://robot.com/sitemap.xml, https://robot.com/newsroom, https://robot.com/terms-of-use,
+  https://status.kiwibot.com (DNS NXDOMAIN), https://api.kiwibot.com — all checked 2026-08-23
+api: Kiwibot Delivery Platform API
+versioning:
+  scheme: unknown
+  current_version: null
+  in_path: false
+  in_header: false
+  note: >-
+    No version segment is exposed on the gateway. /deliveries and /zones answer 401 (defined) while
+    /v1, /v1/deliveries and /v2 answer 404 (not defined), so the deployed service is unversioned at
+    the path level. No version header or versioning policy is published.
+deprecation_policy:
+  published: false
+  url: null
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No deprecation or sunset policy found. RFC 8594 Sunset/Deprecation header support cannot be
+    observed anonymously. NO `Deprecation` pointer is emitted in apis.yml.
+status_page:
+  published: false
+  url: null
+  note: >-
+    No status page. status.kiwibot.com and status.robot.com do not resolve (DNS failure, curl exit
+    6/28 — not an HTTP status), and no statuspage.io / instatus / better-stack property was found
+    linked from robot.com. NO `StatusPage` pointer is emitted in apis.yml.
+sla:
+  published: false
+  url: null
+  note: >-
+    robot.com/terms-of-use is a website terms of use; it contains no API service-level commitment,
+    uptime target, or support-response schedule.
+support:
+  channel: sales/demo form
+  url: https://robot.com/contact
+changelog:
+  published: false
+  url: null
+  note: >-
+    robot.com/newsroom is a dated press-release and media-coverage index (six posts, most recent
+    2026-08-20) about company and product announcements — it is not an API changelog and carries no
+    version or release entries. Recorded as the `Blog` pointer, NOT as `ChangeLog`.
+deprecated_operations: []
+evidence:
+- url: https://robot.com/newsroom
+  status: 200
+- url: https://robot.com/terms-of-use
+  status: 200
+- url: https://api.kiwibot.com/v1
+  status: 404

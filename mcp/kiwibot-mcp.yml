@@ -1,0 +1,22 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  Searched for a hosted or packaged Kiwibot/Robot.com MCP server across the provider's own hosts,
+  npm, PyPI and github.com/kiwicampus (162 repos enumerated) on 2026-08-23. None exists.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+tool_count: 0
+note: >-
+  No MCP server, remote or local. No candidate tool list could be DERIVED either, because there is
+  no OpenAPI to derive operations from — the only machine-visible facts about the API are two
+  gateway-defined resource paths (/deliveries, /zones) discovered by 401-vs-404 response
+  differencing, which is nowhere near enough to author a tool with an honest inputSchema. No
+  endpoint URL is guessed and NO `MCPServer` pointer is emitted in apis.yml. This file records a
+  verified absence so a later round does not re-do the search.
