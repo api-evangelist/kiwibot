@@ -26,6 +26,9 @@ deliveryModel:
   method: derived
 image: https://avatars.githubusercontent.com/u/31900628?v=4
 url: https://raw.githubusercontent.com/api-evangelist/kiwibot/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Its B2B delivery platform is exposed as an API-key-gated REST service on a Google Cloud Endpoints gateway at api.kiwibot.com — historically integrated by ordering partners such as Shopify and Ordermar"
 x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
