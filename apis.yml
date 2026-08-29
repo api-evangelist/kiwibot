@@ -13,6 +13,17 @@ description: >-
   but the company publishes no developer portal, no public API reference, and no machine-readable
   contract; access runs through the sales/demo form. Its autonomy team publishes substantial
   first-party open source ROS 2 tooling from the github.com/kiwicampus organization.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/31900628?v=4
 url: https://raw.githubusercontent.com/api-evangelist/kiwibot/refs/heads/main/apis.yml
 x-type: company
