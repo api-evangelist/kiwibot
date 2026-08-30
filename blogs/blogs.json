@@ -1,0 +1,14 @@
+{
+  "repo": "kiwibot",
+  "feeds": [
+    {
+      "source": "https://robot.com/",
+      "feed_url": "https://robot.com/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-30T22:33:40Z"
+}
