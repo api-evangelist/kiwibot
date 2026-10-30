@@ -64,5 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kiwibot is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/kiwibot-stock
+Kiwibot — legally Kiwi Campus, Inc., and rebranded to Robot.com in October 2025 — builds and operates fleets of autonomous sidewalk delivery robots, warehouse logistics robots, quadruped and humanoid platforms, and robot-mounted advertising units. Founded in Berkeley, California in 2017 by Felipe Chavez and Jason Oviedo out of a UC Berkeley campus food-delivery pilot, the company reports more than 1.7 million completed real-world autonomous tasks for campus dining, retail, grocery and enterprise customers across the United States, Canada, Colombia, the United Arab Emirates and Saudi Arabia, and acquired mobile-advertising firm Nickelytics in 2023. Its B2B delivery platform is exposed as an API-key-gated REST service on a Google Cloud Endpoints gateway at api.kiwibot.com — historically integrated by ordering partners such as Shopify and Ordermark — but the company publishes no developer portal, no public API reference, and no machine-readable contract; access runs through the sales/demo form. Its autonomy team publishes substantial first-party open source ROS 2 tooling from the github.com/kiwicampus organization.
+
+**Areas:** Company · Robotics · Autonomous Vehicles · Delivery · Last Mile Delivery · Logistics · Warehouse Automation · Advertising · ROS · Open Source
+
+## Kiwibot on APIs.io
+
+Everything profiled for Kiwibot is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kiwibot/](https://apis.io/providers/kiwibot/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Kiwibot Delivery Platform API](https://apis.io/apis/kiwibot/kiwibot-delivery-platform-api/) — The business-to-business delivery API behind Kiwibot's autonomous last-mile fleet, served from a Google Cloud Endpoints gateway at api.kiwibot.com. Probed…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kiwibot Authentication](https://apis.io/security/kiwibot/kiwibot-authentication/)
+- [Kiwibot Domain Security](https://apis.io/security/kiwibot/kiwibot-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Kiwibot Plans Pricing](https://apis.io/plans/kiwibot/kiwibot-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kiwibot Rate Limits](https://apis.io/rate-limits/kiwibot/kiwibot-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://robot.com/)
+- [Support](https://robot.com/contact)
+- [Blog](https://robot.com/newsroom)
+- [Terms of service](https://robot.com/terms-of-use)
+- [Privacy policy](https://robot.com/privacy-policy)
+- [GitHub](https://github.com/kiwicampus)
+
+## API Evangelist rating
+
+**Kin Score 17.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kiwibot/](https://apis.io/providers/kiwibot/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kiwibot: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kiwibot/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
